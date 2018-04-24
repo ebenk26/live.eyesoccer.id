@@ -84,7 +84,7 @@ $route['newsletter/eyetube'] 					= "home/newsletter/eyetube";
 $route['newsletter/eyenews'] 					= "home/newsletter/eyenews";
 $route['eyeprofile'] 							= "eyeprofile/klub";
 $route['author/(:any)'] 							= "author/index/$1";
-
+$route['author'] 							= "author/home";
 $route['eyetube/detail/ini-dia-wajah-baru-stadion-gelora-bung-karno-yang-menghabiskan-dana-760-miliar'] 	= "eyetube/detail/ini-dia-wajah-baru-sation-gelora-bung-karno-yang-menghabiskan-dana-760-miliar";
 
 //$route['seo/sitemap\.xml'] = "seo/sitemap";
