@@ -134,7 +134,7 @@ function checkImg($url){
     return $url;
 
 }
-function formatDate($date){
+function formatDate($date,$str = ' '){
     if($date != ''){
         $month =  array('Jan','Feb','Mar','Apr','Mei','Juni','Juli','Agust','Sept','Okt','Nov','Des');
         $date = str_replace('-', '/', $date);//replace string - to /
