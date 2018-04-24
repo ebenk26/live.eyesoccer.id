@@ -286,7 +286,7 @@
                 </div>					
             </div>
 
-            <div class="container tab" style="padding-top: 60px;">
+            <div class="container tab" style="padding-top: 110px;">
                 <span href="" id="star" data-target="#esTab" data-slide-to="0" class="active nonactive" active="true">eyesoccer star</span>
                 <span href="" id="vpopuler" data-target="#esTab" data-slide-to="1" class="nonactive">video popular</span>
                 <span href="" id="vkamu" data-target="#esTab" data-slide-to="2" class="nonactive">video kamu</span>
