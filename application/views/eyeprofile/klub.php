@@ -563,8 +563,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 									<td>-</td>
 									<td>-</td>
 									<td>-</td>
-<<<<<<< HEAD
-=======
+
 								</tr>						
 							</tbody>
 						</table>
@@ -658,7 +657,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 									<td>-</td>
 									<td>-</td>
 									<td>-</td>
->>>>>>> e945fe3265d600d22ee039cf21cc2180bc6f48ad
+
 								</tr>						
 							</tbody>
 						</table>
