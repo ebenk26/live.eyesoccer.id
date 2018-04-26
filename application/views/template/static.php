@@ -502,5 +502,20 @@
 		<?php
 			}
 		?>
+
+    <!-- Development by :-->
+        <!-- Backend Division : -->
+            <!-- Rizky Satrio Putro -->
+            <!-- Muhammad Robi -->
+                <!-- mail:muhammadrobi65@gmail.com -->
+                <!-- LinkedIn:https://www.linkedin.com/in/muhammad-robi-662457139/ -->
+                <!-- IG:@robimuh -->
+            <!-- Kharizuno Hizbullah -->
+            <!-- Sofyan Waldy -->
+            <!-- Mhd. Arif Hidayat -->
+        <!-- Frontend Division : -->
+            <!-- Fajar Ulin Nuha -->
+            <!-- Faradila Nurzahra Danopa -->
+    <!-- ===================================================================================================== -->
     </body>
 </html>
