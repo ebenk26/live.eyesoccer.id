@@ -59,8 +59,10 @@
 			$official = $res->data->official;
 			$cr = $res->data->careers;
 			$gallery = $res->data->gallery;
+
+
 		?>		
-			<input type="hidden" class="hidden_title" value="<?php echo $r->id_club; ?>"/>
+			<input type="hidden" class="hidden_title" value="<?php echo $r->club_id; ?>"/>
 			<div class="left">
               
                 <div class="box-img-radius">
@@ -167,7 +169,7 @@
 			?>
 				<div class="box-pemain">
 					<div class="bg-pemain">
-						<span><?=$p->back_number?></span>
+						<span><?=$p->number?></span>
 						<h1><?=$p->name?></h1>
 						<span><?=$p->position_a?></span>
 					</div>
