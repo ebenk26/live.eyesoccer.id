@@ -84,7 +84,7 @@ define('MEURL', base_url() . 'eyeme/');
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
     define('MEIMG', base_url() . 'img/img_storage/ori_');
 } else {
-    define('MEIMG', 'http://static.eyesoccer.id/v1/cache/images/');
+    define('MEIMG', 'https://static.eyesoccer.id/v1/cache/images/');
 }
 
 define('IMGPATH', './upload/eyeme/');
@@ -96,11 +96,14 @@ define('LOGIN', base_url() . 'home/login');
 define('IMGSTORE', base_url() . 'assets/img_storage/');
 define('MEMBERAREA', base_url() . 'home/member_area');
 define('EYEPROFILE', base_url() . 'eyeprofile/');
-define('pCLUB', EYEPROFILE . 'klub');
-define('pPLAYER', EYEPROFILE . 'pemain');
-define('pOFFICIAL', EYEPROFILE . 'official');
-define('pREFEREE', EYEPROFILE . 'referee');
-define('pSUPPORT', EYEPROFILE . 'supporter');
+define('pCLUB', EYEPROFILE . 'klub/');
+define('pPLAYER', EYEPROFILE . 'pemain/');
+define('PLAYERDETAIL', EYEPROFILE . 'pemain_detail/');
+define('CLUBDETAIL', EYEPROFILE . 'klub_detail/');
+define('pOFFICIAL', EYEPROFILE . 'official/');
+define('OFFICIALDETAIL', EYEPROFILE . 'official_detail/');
+define('pREFEREE', EYEPROFILE . 'referee/');
+define('pSUPPORT', EYEPROFILE . 'supporter/');
 define('EYETUBE', base_url() . 'eyetube');
 define('EYENEWS', base_url() . 'eyenews');
 define('EYEME', base_url() . 'eyeme');
@@ -123,7 +126,35 @@ function p($arr)
     print_r($arr);
     echo '</pre>';
 }
+function checkImg($url){
+    $explode = explode('/',$url);
+    if($explode[6] == ''){
+        return imgCache('LOGO UNTUK APLIKASI.jpg','thumb');
+    }
+    return $url;
 
+}
+function formatDate($date,$str = ' '){
+    if($date != ''){
+        $month =  array('Jan','Feb','Mar','Apr','Mei','Juni','Juli','Agust','Sept','Okt','Nov','Des');
+        $date = str_replace('-', '/', $date);//replace string - to /
+        $date = str_replace('/', ' ', $date);//replace string / to ' '
+        $exp = explode(' ', $date);//explode date to array
+        $abs = (abs($exp[1]) === 0 ? 0 : abs($exp[1]) -1 );//get month 
+        $exp[1] = ($abs === 0 ? 0 : $month[$abs]); //convert number to month 
+        if(strlen($exp[0]) == 4){
+            $new[0] = $exp[2];
+            $new[1] = $exp[1];
+            $new[2] = $exp[0];
+            $imp = implode($str,$new);
+            return $imp;
+        }
+        $imp = implode($str,$exp);
+        
+        return $imp;
+    }
+
+}
 function imgCache($url, $size = "medium")
 {
     return 'http://static.eyesoccer.id/v1/cache/images/' . $url . '/' . $size;
@@ -529,7 +560,10 @@ function LinkScrapingLigaIndonesia()
     // return "http://www.klasemenliga.com/?page=season&id=15105";
     return "https://id.soccerway.com/national/indonesia/super-liga/2018/regular-season/r45094/";
 }
-
+function LinkScrapingAssistLigaIndonesia()
+{
+    return "http://www.worldfootball.net/assists/idn-liga-1-2018/";
+}
 function LinkScrapingLigaInggris()
 {
     // return "http://www.klasemenliga.com/?page=competition&id=8";

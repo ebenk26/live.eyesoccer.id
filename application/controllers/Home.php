@@ -20,24 +20,23 @@ class Home extends CI_Controller
 
     public function index()
     {
+         if($_POST){
+
+            $fn   = $_POST['fn'];     
+            $data = [];
+            if(function_exists($fn))
+            {
+                $fn();
+            } else {
+                $fn = "__".$fn;
+                $this->Home_model->$fn();
+            }
+
+        }
+        else{
         $data["meta"]["title"] = "";
         $data["meta"]["image"] = base_url() . "/assets/img/tab_icon.png";
         $data["meta"]["description"] = "Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
-
-        // $cmd_ads=$this->db->query("select * from tbl_ads")->result_array();
-        // $i=0;
-        // foreach($cmd_ads as $ads){
-        // $e=0;
-        // foreach($ads as $key => $val)
-        // {
-        // $array[$i][$e] =  $val;
-        // $e++;
-        // }
-        // $i++;
-        // }
-        // $data["array"]=$array;
-        // $data["page"]="home";
-        // $data["popup"]=$array[14][3];
 
         $data['jadwal'] = $this->Home_model->get_all_jadwal();
         $data['jadwal_2'] = $this->Home_model->get_all_jadwal_2();
@@ -66,7 +65,8 @@ class Home extends CI_Controller
         $data['eyevent_main'] = $this->Home_model->get_eyevent_main();
         $data['eyevent_main_2'] = $this->Home_model->get_eyevent_main_2();
         $data['eyevent_main_3'] = $this->Home_model->get_eyevent_main_3();
-
+        
+        $data['jadwal_home'] = $this->Home_model->get_jadwal_home();
         $data['jadwal_today'] = $this->Home_model->get_jadwal_today();
         $data['jadwal_tomorrow1'] = $this->Home_model->get_jadwal_tomorrow1();
         $data['jadwal_tomorrow2'] = $this->Home_model->get_jadwal_tomorrow2();
@@ -78,12 +78,13 @@ class Home extends CI_Controller
         $data['eyemarket_main'] = $this->Home_model->get_eyemarket_main();
         $data['klasemen'] = $this->Home_model->get_klasemen();
         $data['products'] = $this->Home_model->get_all_product();
-        $data['kompetisi'] = array(array('competition' => 'Liga Inggris', 'value' => 'liga_inggris'), array('competition' => 'Liga Italia', 'value' => 'liga_italia'), array('competition' => 'Liga Spanyol', 'value' => 'liga_spanyol'), array('competition' => 'Liga Indonesia 1', 'value' => 'liga_indonesia'));
+        $data['kompetisi'] = array(array('competition' => 'Liga Indonesia 1', 'value' => 'liga_indonesia'),array('competition' => 'Liga Inggris', 'value' => 'liga_inggris'), array('competition' => 'Liga Italia', 'value' => 'liga_italia'), array('competition' => 'Liga Spanyol', 'value' => 'liga_spanyol'));
         $data['kanal'] = "home";
         $data['imgEyeme'] = $this->emod->getImgUser();
 
         $data["body"] = $this->load->view('home/index', $data, TRUE);
         $this->load->view('template/static', $data);
+        }
 
         //$data["body"]=$this->load->view('home/index2', $data, true);
         //$this->load->view('template-front-end',$data);

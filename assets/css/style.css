@@ -1079,6 +1079,7 @@ footer{
     -webkit-animation-duration: .8s;
     animation-name: fade;
     animation-duration: .8s;
+    z-index: 1;
 }
 @-webkit-keyframes fade {
     0% {opacity: 0;}
@@ -4859,6 +4860,22 @@ height: 100%;
     cursor: pointer;
     font-weight: 600;
 }
+.orange-default li {
+    background: #fca900;
+    padding: 8px 10px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    border: 1px solid #fca900;
+    cursor: pointer;
+    font-weight: 600;
+
+
+}
+
+.orange-default .active{
+    background-color:#F57C00 !important;
+}
 .orange-default #nav_tab.actnet, .orange-default #nav_tab:hover{
     background: #F57C00 !important;
 }
@@ -5143,4 +5160,61 @@ img.loading {
     margin-right: 15px;
     font-size: 12px;
     padding-top: 8px;
+
+}
+.box-bg{
+   
+    background: linear-gradient(to left ,#F8F7F7,#E0E0E0,#F8F7F7,#E0E0E0);
+    background-size: 400% 400%;
+    -webkit-animation: grad 3s ease-in-out infinite;
+    -moz-animation: grad 3s ease-in-out infinite;
+    animation: grad 3s ease-in-out infinite;
+
+}
+
+
+@-webkit-keyframes grad{
+  0% {
+        background-position: 100% 50%; 
+    }
+    
+    50%{
+        background-position: 50% 100%;
+    }
+    
+    100%{
+        background-position: 0% 50%;
+    }
+}
+@-moz-keyframes grad{
+    0% {
+        background-position: 100% 50%; 
+    }
+    
+    50%{
+        background-position: 50% 100%;
+    }
+    
+    100%{
+        background-position: 0% 50%;
+    }
+}
+@keyframes grad{
+   0% {
+        background-position: 100% 50%; 
+    }
+    
+    50%{
+        background-position: 50% 100%;
+    }
+    
+    100%{
+        background-position: 0% 50%;
+    }
+}
+.stripe.cell-border.dataTable.no-footer{
+    display: table;
+}
+.min{
+    width: 40px;height: 40px;border-radius:50%
 }

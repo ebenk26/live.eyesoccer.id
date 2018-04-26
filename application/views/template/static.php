@@ -111,6 +111,7 @@
             <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
             <script src="<?php echo base_url();?>assets/js/lazyload.min.js"></script>
             <script src="<?php echo base_url();?>assets/js/jquery.sticky.js"></script>
+             <script src="<?php echo base_url();?>assets/js/main.js"></script>
 			<script src='<?=base_url()?>bs/js/infiniteScroll.js'></script>
 
             <link rel="manifest" href="/manifest.json" />
@@ -247,7 +248,7 @@
                             if(!isset($_SESSION["id_member"]))
                             {
                         ?>
-                                <span class="btn-reg">Pendaftaran Liga</span><span class="btn-btn-login"><a style="text-decoration: none;" href="<?=base_url()?>home/login">Masuk</a></span>
+                                <span class="btn-reg" style="display:none;">Pendaftaran Liga</span><span class="btn-reg" style="background-color: #62A555;"><a style="text-decoration: none;" href="<?=base_url()?>home/login">Masuk</a></span>
 	                    <?php
                             }
                             else
