@@ -230,7 +230,7 @@ class Eyeprofile extends CI_Controller {
         $data["meta"]["description"] = "Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
 		$data["meta"]["share"]='
 		<!-- Begin of SEO Meta Tags -->
-		<title> '.$response->data->name.' - EyeProfile | EyeSoccer</title>
+		<title> '.$response->data->name.' - Profil Database | EyeProfile - Eyesoccer.ID</title>
 		<meta name="title" content=" '.$response->data->name.'Profil Database | EyeProfile - Eyesoccer.ID" />
 		<meta name="description" content="('.$response->data->name.' - '.$response->data->club.') - Lihat profil dan statistik selengkapnya >> />
 		<meta name="googlebot-news" content="index,follow" />
