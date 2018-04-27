@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- tes pull -->
         <meta charset="UTF-8">
         <?php 
             if ($kanal != 'eyemarket')
