@@ -282,7 +282,8 @@ class Eyeprofile extends CI_Controller {
 	public function official()
 	{
 		
-		$data['get_all_kompetisi'] = $this->Eyeprofile_model->get_all_kompetisi();		
+		$data['get_all_kompetisi'] = $this->Eyeprofile_model->get_all_kompetisi();	
+		$data['get_all_liga'] = $this->Eyeprofile_model->get_all_liga();	
 		$data['kanal'] = "home";
 		
 		$data['kanal'] = "home";
