@@ -62,6 +62,9 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
             <div class="reqdataleague" id="reqdata" action="doit"> 
                 <input type="hidden" name="fn" value="getdataleague" class="cinput">
                 <input type="hidden" name="competition" value="<?php echo $comp?>" class="cinput">   
+                 <?php if($this->uri->segment(4) AND $this->uri->segment(4) != 'page'){
+                    echo '<input type="hidden" name="league" value="'.urldecode($this->uri->segment(4)).'" class="cinput">';
+                } ?>
                 <script>
                     $(function(){
                         ajaxOnLoad('reqdataleague');
