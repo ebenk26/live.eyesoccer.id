@@ -144,8 +144,9 @@ let split = uri.split('/');
 let liga = 'Liga Usia Muda';
 let uri_segment = __('uri_segment');
 
-if(uri_segment !== undefined || uri_segment !== null){
+if(uri_segment !== undefined && uri_segment !== null){
     let val_uri = decodeURIComponent(uri_segment.getAttribute('val'));
+
     if(val_uri == liga){
         $('#chained_liga').show();
     }

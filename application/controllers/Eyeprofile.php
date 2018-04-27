@@ -394,7 +394,8 @@ class Eyeprofile extends CI_Controller {
 		<!--end of twitter card data-->
 		';
 		
-		$data['get_all_kompetisi'] = $this->Eyeprofile_model->get_all_kompetisi();		
+		$data['competition'] = $this->Eyeprofile_model->get_all_kompetisi();	
+		$data['get_all_liga'] = $this->Eyeprofile_model->get_all_liga();	
 		$data['kanal'] = "home";
 		$data["body"]=$this->load->view('eyeprofile/official', $data, true);
 		$this->load->view('template/static',$data);		
