@@ -508,6 +508,8 @@
     <!-- Development by :-->
         <!-- Backend Division : -->
             <!-- Rizky Satrio Putro -->
+				<!-- mail:ebenk.rzq@gmail.com -->
+                <!-- FB:https://www.facebook.com/rizky.s.putro -->
             <!-- Muhammad Robi -->
                 <!-- mail:muhammadrobi65@gmail.com -->
                 <!-- LinkedIn:https://www.linkedin.com/in/muhammad-robi-662457139/ -->
