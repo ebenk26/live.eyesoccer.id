@@ -144,7 +144,8 @@ class Eyeprofile extends CI_Controller {
 	}
 	public function klub_detail($url = '')
     {
-        if ($url == "") {
+    	$res= $this->pmod->__club_detail($url);
+        if ($url == "" || $res->status == 'Error') {
             redirect("eyeprofile/klub/Liga Indonesia 1");
         }
         $data["meta"]["title"] = "";
@@ -152,8 +153,7 @@ class Eyeprofile extends CI_Controller {
         $data["meta"]["description"] = "Website dan Social Media khusus sepak bola terkeren dan terlengkap dengan data base seluruh stakeholders sepak bola Indonesia";
         $data['get_klub_detail'] = $this->Eyeprofile_model->get_klub_detail($url);
         $data['get_klub_detail_row_array'] = $this->Eyeprofile_model->get_klub_detail_row_array($url);
-        // $data['get_official_list'] = $this->Eyeprofile_model->get_official_list($data['get_klub_detail_row_array']['club_id']);
-        // $data['get_player_list'] = $this->Eyeprofile_model->get_player_list($data['get_klub_detail_row_array']['club_id']);
+
         $data['get_hasil_klub'] = $this->Eyeprofile_model->get_hasil_klub($data['get_klub_detail_row_array']['club_id']);
 		if($data['get_hasil_klub']==NULL){
 			$club_id_a="";
@@ -166,19 +166,11 @@ class Eyeprofile extends CI_Controller {
 		$data['club_id_b']=$club_id_b;
 	
 		$data['get_list_mh'] = $this->Eyeprofile_model->get_list_mh($club_id_a);
-		$data['get_list_mv'] = $this->Eyeprofile_model->get_list_mv($club_id_b);
-		
-
-		// p($data['get_list_mv']);exit();
-		// var_dump($data['get_list_mv']);exit();
-        // $data['get_manager'] = $this->Eyeprofile_model->get_manager($data['get_klub_detail_row_array']['club_id']);
-        // $data['get_pelatih'] = $this->Eyeprofile_model->get_pelatih($data['get_klub_detail_row_array']['club_id']);
-        // $data['get_gallery'] = $this->Eyeprofile_model->get_gallery_club($data['get_klub_detail_row_array']['club_id']);
-        // $data['products'] = $this->Home_model->get_all_product();
-				
+		$data['get_list_mv'] = $this->Eyeprofile_model->get_list_mv($club_id_b);	
 		
 		$data['kanal'] = "home";
-		$data['res'] = $this->pmod->__club_detail($url);
+		$data['res'] = $res;
+		
 		$r = $data['res']->data;
 		$data["meta"]["title"] = "";
         $data["meta"]["image"] = base_url() . "/assets/img/tab_icon.png";
